@@ -22,7 +22,14 @@ namespace WebEssentials.AspNetCore.OutputCaching
                 {
                     if (param == "*" || request.Query.ContainsKey(param))
                     {
-                        key += param + "=" + request.Query[param];
+                        if(param == "snk-agent")
+                        {
+                            key += param + "=" + request.IsMobileBrowser();
+                        }
+                        else
+                        {
+                            key += param + "=" + request.Query[param];
+                        }                        
                     }
                 }
             }
