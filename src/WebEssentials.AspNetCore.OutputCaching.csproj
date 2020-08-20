@@ -14,6 +14,7 @@
     <RepositoryUrl>https://github.com/madskristensen/WebEssentials.AspNetCore.OutputCaching</RepositoryUrl>
     <PackOnBuild>true</PackOnBuild>
     <Owners> Tin Nguyen</Owners>
+    <PackageVersion>1.1</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup>

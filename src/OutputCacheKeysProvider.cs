@@ -20,16 +20,13 @@ namespace WebEssentials.AspNetCore.OutputCaching
             {
                 foreach (string param in profile.VaryByParam.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
-                    if (param == "*" || request.Query.ContainsKey(param))
+                    if (param == "snk-agent")
                     {
-                        if(param == "snk-agent")
-                        {
-                            key += param + "=" + request.IsMobileBrowser();
-                        }
-                        else
-                        {
+                        key += param + "=" + request.IsMobileBrowser();
+                    }
+                    else if (param == "*" || request.Query.ContainsKey(param))
+                    {
                             key += param + "=" + request.Query[param];
-                        }                        
                     }
                 }
             }
